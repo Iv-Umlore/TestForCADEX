@@ -53,9 +53,12 @@ bool Circle::operator<(const Circle& _Right) const {
 	return (this->GetRadius() < _Right.GetRadius()) ? true : false;
 }
 
-void swap(Circle* first, Circle* second) {
+/*void std::swap(Circle& first, Circle& second) {
 	
-	Circle* point = first;
+	std::cout << "Swaped!!!!";
+
+	Circle point = first;
 	first = second;
 	second = point;
-}
+}*/
+
