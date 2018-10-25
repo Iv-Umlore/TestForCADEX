@@ -1,10 +1,10 @@
 #pragma once
 
-#include "Curves.h"
+#include "CurvesFactory.h"
 #include "Ellipse.h"
 
 
-static class EllipseFactory {
+static class EllipseFactory : public CurvesFactory {
 public:
 
 	static Curves* Create() {

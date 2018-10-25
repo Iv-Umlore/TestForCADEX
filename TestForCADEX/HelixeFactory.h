@@ -1,11 +1,11 @@
 #pragma once
 
 
-#include "Curves.h"
+#include "CurvesFactory.h"
 #include "Helixe.h"
 
 
-static class HelixeFactory {
+static class HelixeFactory : public CurvesFactory{
 public:
 
 	static Curves* Create() {

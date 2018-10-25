@@ -13,7 +13,7 @@ Circle::Circle() {
 
 };
 
-double Circle::GetRadius() {
+double Circle::GetRadius() const{
 	return R;
 }
 
@@ -38,3 +38,24 @@ std::vector<double>* Circle::GetDerivative(double t) {
 
 	return &derivative;
 };
+
+
+bool Circle::operator()(Circle* first, Circle* second) {
+	if (first->GetRadius() > second->GetRadius())
+		return true;
+	else return false;
+}
+
+bool Circle::operator<(const Circle& _Right) const {
+	return (this->GetRadius() < _Right.GetRadius()) ? true : false;
+}
+/*
+void swap(Circle* first, Circle* second) {
+
+	Circle* point = nullptr;
+
+	point = first;
+	first = second;
+	second = first;
+
+}*/

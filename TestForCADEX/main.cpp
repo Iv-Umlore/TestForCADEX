@@ -3,13 +3,18 @@
 #include "AllHeader.h"
 #include <random>
 
+#include <tbb/parallel_sort.h>
+
+// tbb sort
+void ParallelArraySort(Circle** curv, int length);
+// simple bubble sort
+void ArraySort(Circle** curv, int length);
+
 void swap(Circle* first, Circle* second);
 
 void printVector(std::vector<double> vect);
 
-void ArraySort(Circle** curv, int length);
 
-void ParallelArraySort(Circle** curv, int length);
 
 int main() {
 	int random_n;
@@ -76,7 +81,7 @@ int main() {
 		//part 5
 
 		std::cout << "Number of circle: " << j << std::endl;
-		ArraySort(curv2, j);
+		ParallelArraySort(curv2, j);
 
 		// part 6
 		double summ = 0.0;
@@ -93,9 +98,8 @@ void printVector(std::vector<double> vect) {
 	std::cout << "{ " << vect[0] << ", " << vect[1] << ", " << vect[2] << " }";
 }
 
-template <class T>
-void swap(T first, T second) {
-	T point = first;
+void swap(Circle* first, Circle* second) {
+	Circle* point = first;
 	first = second;
 	second = point;
 }
@@ -113,6 +117,11 @@ void ArraySort(Circle** curv, int length) {
 				
 }
 
+
+// tbb
 void ParallelArraySort(Circle** curv, int length) {
-	
+
+	tbb::parallel_sort(curv[0], curv[length]);
+
 }
+

@@ -2,12 +2,11 @@
 
 #include "Curves.h"
 
-
-static class CircleFactory {
-public:	
+static class CurvesFactory {
+public:
 
 	static Curves* Create() {
-		return  (Curves*)new Circle();
+		return  new Curves();
 	}
 
 };
