@@ -10,8 +10,6 @@ void ParallelArraySort(Circle** curv, int length);
 // simple bubble sort
 void ArraySort(Circle** curv, int length);
 
-void swap(Circle* first, Circle* second);
-
 void printVector(std::vector<double> vect);
 
 
@@ -96,12 +94,6 @@ int main() {
 
 void printVector(std::vector<double> vect) {
 	std::cout << "{ " << vect[0] << ", " << vect[1] << ", " << vect[2] << " }";
-}
-
-void swap(Circle* first, Circle* second) {
-	Circle* point = first;
-	first = second;
-	second = point;
 }
 
 void ArraySort(Circle** curv, int length) {

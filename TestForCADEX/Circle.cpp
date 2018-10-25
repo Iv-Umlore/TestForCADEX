@@ -1,5 +1,6 @@
 #include "Circle.h"
 
+
 Circle::Circle() {
 	Ctype = circle;
 
@@ -46,16 +47,15 @@ bool Circle::operator()(Circle* first, Circle* second) {
 	else return false;
 }
 
+// true/false for sort 1 to 10/ 10 to 1
+
 bool Circle::operator<(const Circle& _Right) const {
 	return (this->GetRadius() < _Right.GetRadius()) ? true : false;
 }
-/*
+
 void swap(Circle* first, Circle* second) {
-
-	Circle* point = nullptr;
-
-	point = first;
+	
+	Circle* point = first;
 	first = second;
-	second = first;
-
-}*/
+	second = point;
+}

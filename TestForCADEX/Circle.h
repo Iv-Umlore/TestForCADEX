@@ -1,6 +1,7 @@
 #ifndef _Circle_
 #define _Circle_
 
+#include <iostream>
 #include "Curves.h"
 
 class Circle : protected Curves {
@@ -20,15 +21,17 @@ public:
 	std::vector<double>* GetDerivative(double t);
 
 
-	// for TBB
+	
 	bool operator()(Circle* first, Circle* second);
 
 	// metod for library xstddef, project don't work without it
 	bool operator<(const Circle& _Right) const;
 
-	//void swap(Circle* first, Circle* second);
 
 };
+
+// for TBB
+void swap(Circle* first, Circle* second);
 
 
 #endif // !_Circle_
