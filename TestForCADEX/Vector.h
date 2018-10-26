@@ -25,7 +25,7 @@ public:
 	}
 	
 	void AddNote(int position, type curvT) {
-		// There is no protection because I will not break my code ( position <= _size )
+		// There is no protection because I will not break my code ( position < _size )
 		switch (curvT)
 		{
 		case circle: {

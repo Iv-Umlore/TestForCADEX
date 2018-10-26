@@ -4,8 +4,6 @@
 #include <random>
 #include "Vector.h"
 
-//void swap(Circle* first, Circle* second);
-
 void printVector(std::vector<double> vect);
 
 void CheckHelixe(Helixe* hel);
@@ -19,7 +17,6 @@ int main() {
 	std::vector<double> vect(3);
 
 	MyVector<Curves*> curv(20);
-	//Curves** curv = new Curves*[20];
 
 	// Проверка на наличие всех типов кривых
 	bool* CurvType = new bool(3);
@@ -46,11 +43,16 @@ int main() {
 		std::cout << CurvType[i] << " ";
 	std::cout << std::endl;
 	// part 4:
-	
+
 		int j = 0;
-		MyVector<Circle*> curv2(20);
+		int length = 0;
+		for (int i = 0; i < 20; i++)
+			if (curv[i]->GetType() == circle)
+				length++;
+
+		MyVector<Circle*> curv2(length);
 		
-		for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < length; i++) {
 			curv2[i] = nullptr;
 		}
 
@@ -64,13 +66,14 @@ int main() {
 				CheckHelixe((Helixe*)curv[i]);
 		}
 		//part 5
+		
+		std::cout << "Number of circle: " << length << std::endl;
 
-		std::cout << "Number of circle: " << j << std::endl;
-		ArraySort(curv2, j);
+		ArraySort(curv2, length);
 
 		// part 6
 		double summ = 0.0;
-		for (int i = 0; i < j; i++) {
+		for (int i = 0; i < length; i++) {
 			std::cout << curv2[i]->GetRadius() << " " << std::endl;
 			summ += curv2[i]->GetRadius();
 		}
@@ -82,13 +85,6 @@ int main() {
 void printVector(std::vector<double> vect) {
 	std::cout << "{ " << vect[0] << ", " << vect[1] << ", " << vect[2] << " }";
 }
-/*
-template <class T>
-void swap(T first, T second) {
-	T point = first;
-	first = second;
-	second = point;
-}*/
 
 template<class T>
 void ArraySort(MyVector<T> curv, int length) {
@@ -98,14 +94,9 @@ void ArraySort(MyVector<T> curv, int length) {
 			if (curv[i]->GetRadius() > curv[j]->GetRadius()) {
 				point = curv[i];
 				curv[i] = curv[j];
-				curv[j] = point;
-				//swap<Circle*>(curv[i], curv[j]);
+				curv[j] = point;				
 		}
 				
-}
-
-void ParallelArraySort(Circle** curv, int length) {
-	
 }
 
 void CheckHelixe(Helixe* hel) {
