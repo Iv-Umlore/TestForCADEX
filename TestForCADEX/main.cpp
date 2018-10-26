@@ -62,8 +62,8 @@ int main() {
 				curv2[j] = (Circle*)curv[i];
 				j++;
 			}
-			if (curv[i]->GetType() == helixe)
-				CheckHelixe((Helixe*)curv[i]);
+			/*if (curv[i]->GetType() == helixe)
+				CheckHelixe((Helixe*)curv[i]);*/
 		}
 		//part 5
 		
