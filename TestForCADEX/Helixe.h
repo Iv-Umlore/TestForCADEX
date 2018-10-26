@@ -5,7 +5,7 @@
 
 class Helixe : protected Curves {
 protected:
-	double widthP, heightP, speed;
+	double R, speed;
 	std::vector<double> value;
 	std::vector<double> derivative;
 public:
@@ -16,7 +16,6 @@ public:
 	std::vector<double>* GetValue(double t);
 
 	std::vector<double>* GetDerivative(double t);
-
 
 };
 

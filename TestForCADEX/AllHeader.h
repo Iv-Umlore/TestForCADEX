@@ -1,13 +1,7 @@
-#ifndef _AllHead_
-#define _AllGead_
-
+#pragma once
 
 #include "Circle.h"
 #include "Helixe.h"
 #include "Ellipse.h"
-#include "CircleFactory.h"
-#include "EllipseFactory.h"
-#include "HelixeFactory.h"
+#include "Curves.h"
 #include <iostream>
-
-#endif // !_AllHead_

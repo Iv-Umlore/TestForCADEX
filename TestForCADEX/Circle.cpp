@@ -1,6 +1,5 @@
 #include "Circle.h"
 
-
 Circle::Circle() {
 	Ctype = circle;
 
@@ -40,7 +39,6 @@ std::vector<double>* Circle::GetDerivative(double t) {
 	return &derivative;
 };
 
-
 bool Circle::operator()(Circle* first, Circle* second) {
 	if (first->GetRadius() > second->GetRadius())
 		return true;
@@ -53,12 +51,12 @@ bool Circle::operator<(const Circle& _Right) const {
 	return (this->GetRadius() < _Right.GetRadius()) ? true : false;
 }
 
-/*void std::swap(Circle& first, Circle& second) {
-	
-	std::cout << "Swaped!!!!";
 
-	Circle point = first;
-	first = second;
-	second = point;
-}*/
-
+template<>
+void std::swap<Circle, Circle>(Circle& lhs, Circle& rhs)
+{
+	Circle tmp;
+	tmp = lhs;
+	lhs = rhs;
+	rhs = tmp;
+}
