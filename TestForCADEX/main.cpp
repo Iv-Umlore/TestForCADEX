@@ -2,20 +2,24 @@
 
 #include "AllHeader.h"
 #include <random>
+#include "Vector.h"
 
-void swap(Circle* first, Circle* second);
+//void swap(Circle* first, Circle* second);
 
 void printVector(std::vector<double> vect);
 
-void ArraySort(Circle** curv, int length);
+void CheckHelixe(Helixe* hel);
 
-void ParallelArraySort(Circle** curv, int length);
+template<class T>
+void ArraySort(MyVector<T>, int length);
 
 int main() {
+
 	int random_n;
 	std::vector<double> vect(3);
 
-	Curves** curv = new Curves*[20];
+	MyVector<Curves*> curv(20);
+	//Curves** curv = new Curves*[20];
 
 	// Проверка на наличие всех типов кривых
 	bool* CurvType = new bool(3);
@@ -26,25 +30,9 @@ int main() {
 	// заполнение массива
 	for (int i = 0; i < 20; i++) {
 		random_n = rand() % 3;
+		CurvType[random_n] = true;
+		curv.AddNote(i, (type)random_n);
 
-		switch (random_n) {
-		case 0: {
-			curv[i] = CircleFactory::Create();
-			CurvType[0] = true;
-			break;
-		}
-		case 1: {
-			curv[i] = EllipseFactory::Create();
-			CurvType[1] = true;
-			break;
-		}
-		case 2: {
-			curv[i] = HelixeFactory::Create();
-			CurvType[2] = true;
-			break;
-		}
-		default: break;
-		}
 		printVector(*curv[i]->GetValue(PI / 4));
 		std::cout << " ";
 		printVector(*curv[i]->GetDerivative(PI / 4));
@@ -60,7 +48,7 @@ int main() {
 	// part 4:
 	
 		int j = 0;
-		Circle** curv2 = new Circle*[20];
+		MyVector<Circle*> curv2(20);
 		
 		for (int i = 0; i < 20; i++) {
 			curv2[i] = nullptr;
@@ -72,6 +60,8 @@ int main() {
 				curv2[j] = (Circle*)curv[i];
 				j++;
 			}
+			if (curv[i]->GetType() == helixe)
+				CheckHelixe((Helixe*)curv[i]);
 		}
 		//part 5
 
@@ -92,15 +82,16 @@ int main() {
 void printVector(std::vector<double> vect) {
 	std::cout << "{ " << vect[0] << ", " << vect[1] << ", " << vect[2] << " }";
 }
-
+/*
 template <class T>
 void swap(T first, T second) {
 	T point = first;
 	first = second;
 	second = point;
-}
+}*/
 
-void ArraySort(Circle** curv, int length) {
+template<class T>
+void ArraySort(MyVector<T> curv, int length) {
 	Circle* point = nullptr;
 	for (int i = 0; i < length - 1; i++)
 		for (int j = i + 1; j <= length - 1; j++) 
@@ -115,4 +106,14 @@ void ArraySort(Circle** curv, int length) {
 
 void ParallelArraySort(Circle** curv, int length) {
 	
+}
+
+void CheckHelixe(Helixe* hel) {
+	std::cout << std::endl << std::endl;
+	printVector(*(hel->GetValue(0.0)));
+	std::cout << std::endl;
+	printVector(*(hel->GetValue(2 * PI)));
+	std::cout << std::endl;
+	printVector(*(hel->GetValue(4 * PI)));
+	std::cout << std::endl << std::endl;
 }
