@@ -1,4 +1,6 @@
-.vs/
-x64/
-TestForCADEX/x64/
+.vs\
+x64\
+TestForCADEX\x64\
+
+D:\PROGRAMS\TestForCADEX\TestForCADEX\
 
