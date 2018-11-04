@@ -11,10 +11,8 @@ void printVector(std::vector<double> vect);
 
 void CheckHelixe(Helixe* hel);
 
-template<class T>
-void ArraySort(MyVector<T>, int length);
-
-void ParallelSort(MyVector<Circle*> curv, int length);
+template <class T>
+void ParallelSort(MyVector<T> curv, int length);
 
 int main() {
 
@@ -72,7 +70,7 @@ int main() {
 		
 		std::cout << "Number of circle: " << length << std::endl;
 
-		ArraySort(curv2, length);
+		ParallelSort(curv2, length);
 
 		// part 6
 		double summ = 0.0;
@@ -89,20 +87,9 @@ void printVector(std::vector<double> vect) {
 	std::cout << "{ " << vect[0] << ", " << vect[1] << ", " << vect[2] << " }";
 }
 
-template<class T>
-void ArraySort(MyVector<T> curv, int length) {
-	Circle* point = nullptr;
-	for (int i = 0; i < length - 1; i++)
-		for (int j = i + 1; j <= length - 1; j++) 
-			if (curv[i]->GetRadius() > curv[j]->GetRadius()) {
-				point = curv[i];
-				curv[i] = curv[j];
-				curv[j] = point;				
-		}
-				
-}
 
-void ParallelSort(MyVector<Circle*> curv, int length) {
+template <class T>
+void ParallelSort(MyVector<T> curv, int length) {
 
 	tbb::parallel_sort(curv[0], curv[length]);
 

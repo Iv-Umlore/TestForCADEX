@@ -19,7 +19,7 @@ public:
 
 	std::vector<double>* GetDerivative(double t);
 
-	bool operator()(Circle* first, Circle* second);
+	bool operator()(Circle& first, Circle& second);
 
 	// metod for library xstddef, project don't work without it
 	bool operator<(const Circle& _Right) const;

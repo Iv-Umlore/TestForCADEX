@@ -39,8 +39,8 @@ std::vector<double>* Circle::GetDerivative(double t) {
 	return &derivative;
 };
 
-bool Circle::operator()(Circle* first, Circle* second) {
-	if (first->GetRadius() > second->GetRadius())
+bool Circle::operator()(Circle& first, Circle& second) {
+	if (first.GetRadius() < second.GetRadius())
 		return true;
 	else return false;
 }
