@@ -1,7 +1,8 @@
 #pragma once
 
-#include "AllHeader.h"
 #include <random>
+#include <iostream>
+
 #include "Vector.h"
 
 void printVector(std::vector<double> vect);
@@ -10,6 +11,7 @@ void CheckHelixe(Helixe* hel);
 
 template<class T>
 void ArraySort(MyVector<T>, int length);
+
 
 int main() {
 
@@ -47,7 +49,7 @@ int main() {
 		int j = 0;
 		int length = 0;
 		for (int i = 0; i < 20; i++)
-			if (curv[i]->GetType() == circle)
+			if (curv[i]->Ctype == circle)
 				length++;
 
 		MyVector<Circle*> curv2(length);
@@ -58,19 +60,19 @@ int main() {
 
 		// Заполнение второго массива
 		for (int i = 0; i < 20; i++) {
-			if (curv[i]->GetType() == circle) {
+			if (curv[i]->Ctype == circle) {
 				curv2[j] = (Circle*)curv[i];
 				j++;
 			}
-			/*if (curv[i]->GetType() == helixe)
-				CheckHelixe((Helixe*)curv[i]);*/
+			if (curv[i]->Ctype == helixe)
+				CheckHelixe((Helixe*)curv[i]);
 		}
 		//part 5
 		
 		std::cout << "Number of circle: " << length << std::endl;
 
 		ArraySort(curv2, length);
-
+		
 		// part 6
 		double summ = 0.0;
 		for (int i = 0; i < length; i++) {
@@ -82,6 +84,7 @@ int main() {
 	system("pause");
 }
 
+
 void printVector(std::vector<double> vect) {
 	std::cout << "{ " << vect[0] << ", " << vect[1] << ", " << vect[2] << " }";
 }
@@ -90,13 +93,13 @@ template<class T>
 void ArraySort(MyVector<T> curv, int length) {
 	Circle* point = nullptr;
 	for (int i = 0; i < length - 1; i++)
-		for (int j = i + 1; j <= length - 1; j++) 
+		for (int j = i + 1; j <= length - 1; j++)
 			if (curv[i]->GetRadius() > curv[j]->GetRadius()) {
 				point = curv[i];
 				curv[i] = curv[j];
-				curv[j] = point;				
-		}
-				
+				curv[j] = point;
+			}
+
 }
 
 void CheckHelixe(Helixe* hel) {
@@ -108,3 +111,4 @@ void CheckHelixe(Helixe* hel) {
 	printVector(*(hel->GetValue(4 * PI)));
 	std::cout << std::endl << std::endl;
 }
+

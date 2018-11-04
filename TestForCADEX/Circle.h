@@ -5,7 +5,7 @@
 
 class Circle : protected Curves {
 protected:
-	double R;
+	double Ra;
 	
 public:
 
@@ -13,12 +13,12 @@ public:
 
 	double GetRadius();
 	   		
-	type GetType();
-
 	std::vector<double>* GetValue(double t);
 
 	std::vector<double>* GetDerivative(double t);
 
+	~Circle();
+	
 };
 
 
