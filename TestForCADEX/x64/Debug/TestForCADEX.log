@@ -1,0 +1,8 @@
+﻿  Circle.cpp
+  Ellipse.cpp
+  Helixe.cpp
+  main.cpp
+d:\programs\testforcadex\testforcadex\main.cpp(22): warning C4305: инициализация: усечение из "int" в "bool"
+d:\programs\testforcadex\testforcadex\main.cpp(26): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Создание кода...
+  TestForCADEX.vcxproj -> D:\PROGRAMS\TestForCADEX\x64\Debug\TestForCADEX.exe
