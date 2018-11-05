@@ -71,6 +71,8 @@ int main() {
 		
 		std::cout << "Number of circle: " << length << std::endl;
 
+		//std::sort(*(curv2[0]), *(curv2[length-1]));
+
 		ArraySort(curv2, length);
 		
 		// part 6
@@ -111,4 +113,3 @@ void CheckHelixe(Helixe* hel) {
 	printVector(*(hel->GetValue(4 * PI)));
 	std::cout << std::endl << std::endl;
 }
-

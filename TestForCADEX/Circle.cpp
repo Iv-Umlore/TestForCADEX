@@ -13,7 +13,7 @@ Circle::Circle() {
 
 };
 
-double Circle::GetRadius() {
+double Circle::GetRadius() const{
 	return Ra;
 }
 
@@ -34,6 +34,11 @@ std::vector<double>* Circle::GetDerivative(double t) {
 
 	return &derivative;
 };
+
+bool Circle::operator<(const Circle * second) const {
+	return (this->GetRadius() < second->GetRadius()) ? true : false;
+}
+
 
 Circle::~Circle() {
 	Curves::~Curves();
