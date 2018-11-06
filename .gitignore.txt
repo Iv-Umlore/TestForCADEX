@@ -1,5 +1,15 @@
+
 .vs/
 x64/
 TestForCADEXx64/*/
+
+*.pdb
+*.ilk
+*.exe
+*.tlog
+*.obj
+*.db
+*.suo
+
 
 
