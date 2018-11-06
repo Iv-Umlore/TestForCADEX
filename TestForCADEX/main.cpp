@@ -10,7 +10,7 @@ void printVector(std::vector<double> vect);
 void CheckHelixe(Helixe* hel);
 
 template<class T>
-void ArraySort(MyVector<T>, int length);
+void ArraySort(MyVector<T> & curv, int length);
 
 
 int main() {
@@ -92,7 +92,7 @@ void printVector(std::vector<double> vect) {
 }
 
 template<class T>
-void ArraySort(MyVector<T> curv, int length) {
+void ArraySort(MyVector<T> & curv, int length) {
 	Circle* point = nullptr;
 	for (int i = 0; i < length - 1; i++)
 		for (int j = i + 1; j <= length - 1; j++)

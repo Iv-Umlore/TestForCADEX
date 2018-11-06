@@ -46,4 +46,8 @@ public:
 
 	}
 
+	~MyVector() {
+		delete[] arr;
+	}
+
 };
