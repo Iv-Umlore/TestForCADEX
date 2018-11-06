@@ -17,7 +17,7 @@ public:
 
 	std::vector<double>* GetDerivative(double t);
 
-	bool operator<(const Circle * second) const;
+	bool operator<(const Circle & second) const;
 
 	~Circle();
 	
