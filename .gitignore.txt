@@ -1,4 +1,3 @@
-
 .vs/
 x64/
 TestForCADEXx64/*/
@@ -10,6 +9,3 @@ TestForCADEXx64/*/
 *.obj
 *.db
 *.suo
-
-
-
