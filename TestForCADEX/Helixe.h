@@ -10,9 +10,9 @@ protected:
 public:
 	Helixe();
 	
-	std::vector<double>* GetValue(double t);
+	virtual std::vector<double>* GetValue(double t);
 
-	std::vector<double>* GetDerivative(double t);
+	virtual std::vector<double>* GetDerivative(double t);
 
 	~Helixe();
 

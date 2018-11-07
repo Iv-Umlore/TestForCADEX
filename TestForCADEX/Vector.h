@@ -51,3 +51,13 @@ public:
 	}
 
 };
+/*
+template <class T>
+int std::begin(MyVector<T> myVec) {
+	return myVec.GetArrayLink()[0];
+}
+
+template <class T>
+int std::end(MyVector<T> myVec) {
+	return myVec.GetArrayLink()[];
+}*/
