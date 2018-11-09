@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="Circle.cpp">
       <Filter>Файлы заголовков</Filter>
     </ClCompile>
@@ -26,6 +23,9 @@
     </ClCompile>
     <ClCompile Include="Helixe.cpp">
       <Filter>Файлы заголовков</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -38,9 +38,12 @@
     <ClInclude Include="Helixe.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="AllHeader.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+=======
+>>>>>>> master
     <ClInclude Include="Ellipse.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>

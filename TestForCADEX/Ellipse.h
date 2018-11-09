@@ -1,21 +1,21 @@
 #ifndef _Ellipse_
 #define _Ellipse_
 
-#include "Curves.h"
+#include "Circle.h"
 
-class Ellipse : protected Curves {
+class Ellipse : protected Circle {
 protected:
-	double widthP, heightP;
+	double Rb;
+
 public:
 
 	Ellipse();
+	
+	virtual std::vector<double>* GetValue(double t);
 
-	type GetType();
+	virtual std::vector<double>* GetDerivative(double t);
 
-	std::vector<double>* GetValue(double t);
-
-	std::vector<double>* GetDerivative(double t);
-
+	~Ellipse();
 
 };
 

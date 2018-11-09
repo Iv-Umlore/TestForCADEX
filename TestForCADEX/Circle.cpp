@@ -6,7 +6,7 @@ Circle::Circle() {
 	z = 0;
 	x = fRand(-randMax, randMax);
 	y = fRand(-randMax, randMax);
-	R = fRand(1.0, 10.0);
+	Ra = fRand(1.0, 10.0);
 
 	value = std::vector<double>(3);
 	derivative = std::vector<double>(3);
@@ -14,17 +14,21 @@ Circle::Circle() {
 };
 
 double Circle::GetRadius() const{
+<<<<<<< HEAD
 	return R;
 }
 
 type Circle::GetType() {
 	return Ctype;
+=======
+	return Ra;
+>>>>>>> master
 }
 
 std::vector<double>* Circle::GetValue(double t) {
 
-	value[0] = x + R * cos(t);
-	value[1] = y + R * sin(t);
+	value[0] = x + Ra * cos(t);
+	value[1] = y + Ra * sin(t);
 	value[2] = 0;
 
 	return &value;
@@ -32,13 +36,14 @@ std::vector<double>* Circle::GetValue(double t) {
 
 std::vector<double>* Circle::GetDerivative(double t) {
 
-	derivative[0] = -R * sin(t);
-	derivative[1] = R * cos(t);
+	derivative[0] = -Ra * sin(t);
+	derivative[1] = Ra * cos(t);
 	derivative[2] = 0;
 
 	return &derivative;
 };
 
+<<<<<<< HEAD
 bool Circle::operator()(Circle& first, Circle& second) {
 	if (first.GetRadius() < second.GetRadius())
 		return true;
@@ -60,3 +65,13 @@ void std::swap<Circle, Circle>(Circle& lhs, Circle& rhs)
 	lhs = rhs;
 	rhs = tmp;
 }
+=======
+bool Circle::operator<(const Circle & second) const {
+	return (this->GetRadius() < second.GetRadius()) ? true : false;
+}
+
+
+Circle::~Circle() {
+	Curves::~Curves();
+};
+>>>>>>> master

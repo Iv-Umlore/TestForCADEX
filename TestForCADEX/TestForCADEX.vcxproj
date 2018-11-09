@@ -133,7 +133,6 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AllHeader.h" />
     <ClInclude Include="Circle.h" />
     <ClInclude Include="Curves.h" />
     <ClInclude Include="Ellipse.h" />

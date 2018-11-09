@@ -1,6 +1,10 @@
 #pragma once
 
+<<<<<<< HEAD
 #include "AllHeader.h" 
+=======
+#include "Helixe.h" 
+>>>>>>> master
 
 template<class T>
 class MyVector {
@@ -46,4 +50,22 @@ public:
 
 	}
 
+<<<<<<< HEAD
 };
+=======
+	~MyVector() {
+		delete[] arr;
+	}
+
+};
+/*
+template <class T>
+int std::begin(MyVector<T> myVec) {
+	return myVec.GetArrayLink()[0];
+}
+
+template <class T>
+int std::end(MyVector<T> myVec) {
+	return myVec.GetArrayLink()[];
+}*/
+>>>>>>> master

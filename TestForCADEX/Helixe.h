@@ -1,22 +1,30 @@
 #ifndef _Helixe_
 #define _Helixe_
 
-#include "Curves.h"
+#include "Ellipse.h"
 
-class Helixe : protected Curves {
+class Helixe : protected Ellipse {
 protected:
+<<<<<<< HEAD
 	double R, speed;
 	std::vector<double> value;
 	std::vector<double> derivative;
+=======
+	double step;
+	
+>>>>>>> master
 public:
 	Helixe();
+	
+	virtual std::vector<double>* GetValue(double t);
 
-	type GetType();
+	virtual std::vector<double>* GetDerivative(double t);
 
-	std::vector<double>* GetValue(double t);
+<<<<<<< HEAD
+=======
+	~Helixe();
 
-	std::vector<double>* GetDerivative(double t);
-
+>>>>>>> master
 };
 
 
