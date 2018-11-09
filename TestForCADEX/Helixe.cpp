@@ -20,7 +20,7 @@ std::vector<double>* Helixe::GetValue(double t) {
 
 	value[0] = x + Ra * sin(t);
 	value[1] = y + Rb * cos(t);
-	value[2] = z + step * t / PI;
+	value[2] = z + step * t / 2 / PI;
 
 	return &value;
 
@@ -30,7 +30,7 @@ std::vector<double>* Helixe::GetDerivative(double t) {
 	
 	derivative[0] = -Ra * cos(t);
 	derivative[1] = Rb * sin(t);
-	derivative[2] = step;
+	derivative[2] = step / 2 / PI;
 
 	return &derivative;
 
