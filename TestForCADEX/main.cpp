@@ -1,37 +1,20 @@
 #pragma once
 
 #include <random>
-<<<<<<< HEAD
 #include "Vector.h"
-
 #include <tbb/parallel_sort.h>
-
-=======
 #include <iostream>
 
-#include "Vector.h"
->>>>>>> master
 
 void printVector(std::vector<double> vect);
 
 void CheckHelixe(Helixe* hel);
-<<<<<<< HEAD
 
-bool CircleComparate(const Circle* first, const Circle* second) {
-	return first->GetRadius() < second->GetRadius();
-}
-
-template <class T>
-void ParallelSort(MyVector<T> curv, int length);
-=======
-
-template<class T>
-void ArraySort(MyVector<T> & curv, int length);
+void ParallelSort(MyVector<Circle*> curv, int length);
 
 bool sortingVect(Circle * first, Circle * second) {
 	return first->GetRadius() < second->GetRadius();
 }
->>>>>>> master
 
 int main() {
 
@@ -69,16 +52,8 @@ int main() {
 		int j = 0;
 		int length = 0;
 		for (int i = 0; i < 20; i++)
-<<<<<<< HEAD
-			if (curv[i]->GetType() == circle)
-				length++;
-
-		MyVector<Circle*> curv2(length);
-		
-=======
 			if (curv[i]->Ctype == circle)
 				length++;
->>>>>>> master
 
 		MyVector<Circle*> curv2(length);
 		
@@ -95,13 +70,8 @@ int main() {
 		
 		std::cout << "Number of circle: " << length << std::endl;
 
-<<<<<<< HEAD
 		ParallelSort(curv2, length);
-
-=======
-		std::sort(&curv2[0], &curv2[length], sortingVect);
-				
->>>>>>> master
+		
 		// part 6
 		double summ = 0.0;
 		for (int i = 0; i < length; i++) {
@@ -118,24 +88,10 @@ void printVector(std::vector<double> vect) {
 	std::cout << "{ " << vect[0] << ", " << vect[1] << ", " << vect[2] << " }";
 }
 
-<<<<<<< HEAD
 
 void ParallelSort(MyVector<Circle*> curv, int length) {
 
-	tbb::parallel_sort(&curv[0], &curv[length], CircleComparate);
-=======
-template<class T>
-void ArraySort(MyVector<T> & curv, int length) {
-	Circle* point = nullptr;
-	for (int i = 0; i < length - 1; i++)
-		for (int j = i + 1; j <= length - 1; j++)
-			if (curv[i]->GetRadius() > curv[j]->GetRadius()) {
-				point = curv[i];
-				curv[i] = curv[j];
-				curv[j] = point;
-			}
->>>>>>> master
-
+	tbb::parallel_sort(&curv[0], &curv[length], sortingVect);
 }
 
 void CheckHelixe(Helixe* hel) {

@@ -13,16 +13,8 @@ Circle::Circle() {
 
 };
 
-double Circle::GetRadius() const{
-<<<<<<< HEAD
-	return R;
-}
-
-type Circle::GetType() {
-	return Ctype;
-=======
+double Circle::GetRadius() {
 	return Ra;
->>>>>>> master
 }
 
 std::vector<double>* Circle::GetValue(double t) {
@@ -43,7 +35,6 @@ std::vector<double>* Circle::GetDerivative(double t) {
 	return &derivative;
 };
 
-<<<<<<< HEAD
 bool Circle::operator()(Circle& first, Circle& second) {
 	if (first.GetRadius() < second.GetRadius())
 		return true;
@@ -52,26 +43,8 @@ bool Circle::operator()(Circle& first, Circle& second) {
 
 // true/false for sort 1 to 10/ 10 to 1
 
-bool Circle::operator<(const Circle& _Right) const {
-	return (this->GetRadius() < _Right.GetRadius()) ? true : false;
-}
-
-
-template<>
-void std::swap<Circle, Circle>(Circle& lhs, Circle& rhs)
-{
-	Circle tmp;
-	tmp = lhs;
-	lhs = rhs;
-	rhs = tmp;
-}
-=======
-bool Circle::operator<(const Circle & second) const {
-	return (this->GetRadius() < second.GetRadius()) ? true : false;
-}
-
 
 Circle::~Circle() {
 	Curves::~Curves();
-};
->>>>>>> master
+}
+

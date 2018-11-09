@@ -5,14 +5,8 @@
 
 class Helixe : protected Ellipse {
 protected:
-<<<<<<< HEAD
-	double R, speed;
-	std::vector<double> value;
-	std::vector<double> derivative;
-=======
 	double step;
 	
->>>>>>> master
 public:
 	Helixe();
 	
@@ -20,11 +14,8 @@ public:
 
 	virtual std::vector<double>* GetDerivative(double t);
 
-<<<<<<< HEAD
-=======
 	~Helixe();
 
->>>>>>> master
 };
 
 
