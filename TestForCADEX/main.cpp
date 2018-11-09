@@ -11,11 +11,10 @@ void CheckHelixe(Helixe* hel);
 
 template<class T>
 void ArraySort(MyVector<T> & curv, int length);
-/*
-template <class T = Circle*>
-bool cmp(T a,  T b) {
-	return (a->GetRadius() < b->GetRadius()) ? true : false;
-}*/
+
+bool sortingVect(Circle * first, Circle * second) {
+	return first->GetRadius() < second->GetRadius();
+}
 
 int main() {
 
@@ -58,10 +57,6 @@ int main() {
 
 		MyVector<Circle*> curv2(length);
 		
-		for (int i = 0; i < length; i++) {
-			curv2[i] = nullptr;
-		}
-
 		// Заполнение второго массива
 		for (int i = 0; i < 20; i++) {
 			if (curv[i]->Ctype == circle) {
@@ -75,10 +70,8 @@ int main() {
 		
 		std::cout << "Number of circle: " << length << std::endl;
 
-		//std::sort(*curv2[0], *curv2[length-1]);
-
-		ArraySort(curv2, length);
-		
+		std::sort(&curv2[0], &curv2[length], sortingVect);
+				
 		// part 6
 		double summ = 0.0;
 		for (int i = 0; i < length; i++) {

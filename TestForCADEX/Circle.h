@@ -10,18 +10,19 @@ protected:
 public:
 
 	Circle();
-
+	
 	double GetRadius() const;
 	   		
-	std::vector<double>* GetValue(double t);
+	virtual std::vector<double>* GetValue(double t);
 
-	std::vector<double>* GetDerivative(double t);
+	virtual std::vector<double>* GetDerivative(double t);
 
 	bool operator<(const Circle & second) const;
 
 	~Circle();
 	
 };
+
 
 
 #endif // !_Circle_
