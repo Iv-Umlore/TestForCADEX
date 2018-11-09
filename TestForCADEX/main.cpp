@@ -11,6 +11,10 @@ void printVector(std::vector<double> vect);
 
 void CheckHelixe(Helixe* hel);
 
+bool CircleComparate(const Circle* first, const Circle* second) {
+	return first->GetRadius() < second->GetRadius();
+}
+
 template <class T>
 void ParallelSort(MyVector<T> curv, int length);
 
@@ -55,9 +59,6 @@ int main() {
 
 		MyVector<Circle*> curv2(length);
 		
-		for (int i = 0; i < length; i++) {
-			curv2[i] = nullptr;
-		}
 
 		// Заполнение второго массива
 		for (int i = 0; i < 20; i++) {
@@ -88,10 +89,9 @@ void printVector(std::vector<double> vect) {
 }
 
 
-template <class T>
-void ParallelSort(MyVector<T> curv, int length) {
+void ParallelSort(MyVector<Circle*> curv, int length) {
 
-	tbb::parallel_sort(curv[0], curv[length]);
+	tbb::parallel_sort(&curv[0], &curv[length], CircleComparate);
 
 }
 
