@@ -12,8 +12,8 @@ void CheckHelixe(Helixe* hel);
 template<class T>
 void ArraySort(MyVector<T> & curv, int length);
 
-bool sortingVect(Circle & first, Circle & second) {
-	return first.GetRadius() < second.GetRadius();
+bool sortingVect(Circle * first, Circle * second) {
+	return first->GetRadius() < second->GetRadius();
 }
 
 int main() {
@@ -74,9 +74,9 @@ int main() {
 		
 		std::cout << "Number of circle: " << length << std::endl;
 
-		std::sort(curv2[0], curv2[length], sortingVect);
+		//std::sort(curv2[0], curv2[length], sortingVect);
 		
-		//ArraySort(curv2, length);
+		ArraySort(curv2, length);
 		
 		// part 6
 		double summ = 0.0;
