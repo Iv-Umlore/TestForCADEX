@@ -57,10 +57,6 @@ int main() {
 
 		MyVector<Circle*> curv2(length);
 		
-		for (int i = 0; i < length; i++) {
-			curv2[i] = nullptr;
-		}
-
 		// Заполнение второго массива
 		for (int i = 0; i < 20; i++) {
 			if (curv[i]->Ctype == circle) {
@@ -74,10 +70,8 @@ int main() {
 		
 		std::cout << "Number of circle: " << length << std::endl;
 
-		//std::sort(curv2[0], curv2[length], sortingVect);
-		
-		ArraySort(curv2, length);
-		
+		std::sort(&curv2[0], &curv2[length], sortingVect);
+				
 		// part 6
 		double summ = 0.0;
 		for (int i = 0; i < length; i++) {
