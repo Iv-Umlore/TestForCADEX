@@ -4,10 +4,10 @@
 #include "Ellipse.h"
 
 class Helixe : protected Ellipse {
-protected:
-	double step;
-	
 public:
+
+	double step;
+
 	Helixe();
 	
 	virtual std::vector<double>* GetValue(double t);

@@ -102,11 +102,13 @@ void ArraySort(MyVector<T> & curv, int length) {
 }
 
 void CheckHelixe(Helixe* hel) {
-	std::cout << std::endl << std::endl;
+	std::cout << std::endl;;
+	std::cout << std::endl << "Helixe's step: " << hel->step << std::endl;
+
 	printVector(*(hel->GetValue(0.0)));
 	std::cout << std::endl;
 	printVector(*(hel->GetValue(2 * PI)));
 	std::cout << std::endl;
 	printVector(*(hel->GetValue(4 * PI)));
-	std::cout << std::endl << std::endl;
+	std::cout << std::endl;;
 }
