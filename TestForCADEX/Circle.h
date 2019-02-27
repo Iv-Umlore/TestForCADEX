@@ -8,11 +8,14 @@ protected:
 	double _Rad;
 	double _Area;
 public:
+	Circle();
 
 	Circle(double Radius);
 	
 	virtual double GetArea();
-		
+	
+	virtual void Print();
+
 	~Circle();
 	
 };

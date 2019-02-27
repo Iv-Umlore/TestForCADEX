@@ -12,6 +12,8 @@ public:
 	
 	virtual double GetArea();
 
+	virtual void Print();
+
 	~Ellipse();
 
 };

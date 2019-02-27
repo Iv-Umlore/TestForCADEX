@@ -1,0 +1,6 @@
+﻿  Circle.cpp
+  Ellipse.cpp
+d:\programs\testforcadex\testforcadex\ellipse.cpp(3): error C2512: Circle: нет подходящего конструктора по умолчанию
+  d:\programs\testforcadex\testforcadex\circle.h(6): note:  см. объявление "Circle"
+  main.cpp
+  Создание кода...
