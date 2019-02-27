@@ -3,26 +3,18 @@
 
 #include "Curves.h"
 
-class Circle : protected Curves {
-protected:
-	double Ra;
-	
+class Circle : public Curves {
+protected: 
+	double _Rad;
+	double _Area;
 public:
 
-	Circle();
+	Circle(double Radius);
 	
-	double GetRadius() const;
-	   		
-	virtual std::vector<double>* GetValue(double t);
-
-	virtual std::vector<double>* GetDerivative(double t);
-
-	bool operator<(const Circle & second) const;
-
+	virtual double GetArea();
+		
 	~Circle();
 	
 };
-
-
 
 #endif // !_Circle_

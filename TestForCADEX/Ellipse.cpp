@@ -1,38 +1,22 @@
 #include "Ellipse.h"
 
-Ellipse::Ellipse() {
-	
-	Circle();
-	Ctype = ellipse;
-
-	Rb = fRand(0.5, 5.0);
-
-	while (Ra == Rb) {
-		Rb = fRand(0.5, 5.0);
+Ellipse::Ellipse(double RH, double RW) {
+	Circle::Circle(RH);
+	if (RW > 0.0) {
+		_Rwidth = RW;
 	}
-	
-};
+	else {
+		std::cout << "Error. Second radius below zero..." << std::endl;
+		_Rwidth = 1.0;
+	}
+	_Area = 0.0;
+}
 
-std::vector<double>* Ellipse::GetValue(double t) {	
+double Ellipse::GetArea() {
+	if (_Area == 0.0) {
+		_Area = _Rad * _Rwidth * PI;
+	}
+	return _Area;
+}
 
-	value[0] = x + Ra * sin(t);
-	value[1] = y + Rb * cos(t);
-	value[2] = 0;
-
-	return &value;
-
-};
-
-std::vector<double>* Ellipse::GetDerivative(double t) {	
-
-	derivative[0] = -Ra * cos(t);
-	derivative[1] = Rb * sin(t);
-	derivative[2] = 0;
-
-	return &derivative;
-
-};
-
-Ellipse::~Ellipse() {
-	Circle::~Circle();
-};
+Ellipse::~Ellipse() {};

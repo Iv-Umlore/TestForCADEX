@@ -3,17 +3,14 @@
 
 #include "Circle.h"
 
-class Ellipse : protected Circle {
+class Ellipse : public Circle {
 protected:
-	double Rb;
-
+	double _Rwidth;
 public:
 
-	Ellipse();
+	Ellipse(double RH, double RW);
 	
-	virtual std::vector<double>* GetValue(double t);
-
-	virtual std::vector<double>* GetDerivative(double t);
+	virtual double GetArea();
 
 	~Ellipse();
 
