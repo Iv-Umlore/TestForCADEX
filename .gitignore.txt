@@ -1,6 +1,6 @@
 .vs/
-x64/
-TestForCADEXx64/*/
+/x64/
+/TestForCADEXx64/*/
 
 *.pdb
 *.ilk

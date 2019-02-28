@@ -19,7 +19,7 @@ double Ellipse::GetArea() {
 }
 
 void Ellipse::Print() {
-	std::cout << "It's Ellipse\nRadius First: " << _Rad << " Radius Second: " << _Rwidth << std::endl;
+	std::cout << "It's Ellipse\nFirst Radius: " << _Rad << " Second Radius: " << _Rwidth << std::endl;
 	std::cout << GetArea() << std::endl << std::endl;
 }
 

@@ -1,9 +1,11 @@
 #ifndef _Circle_
 #define _Circle_
 
-#include "Curves.h"
+#include <iostream>
 
-class Circle : public Curves {
+const double PI = 3.1415926535897931;
+
+class Circle {
 protected: 
 	double _Rad;
 	double _Area;
